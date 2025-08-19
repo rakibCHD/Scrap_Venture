@@ -1,0 +1,374 @@
+/* Base Styles */
+:root {
+    --primary-color: #2e7d32;
+    --primary-dark: #1b5e20;
+    --error-color: #c62828;
+    --success-color: #2e7d32;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.login-page {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                      url('../image/background1.jpg');
+}
+
+.dashboard-page {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                      url('../image/background.jpg');
+}
+
+/* Container */
+.container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 1rem;
+}
+
+/* Typography */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0.5rem 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.logout {
+    background-color: var(--error-color);
+    margin-top: 2rem;
+}
+
+.logout:hover {
+    background-color: #b71c1c;
+}
+
+/* Alerts */
+.alert {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: #ffebee;
+    color: var(--error-color);
+    border-left: 4px solid var(--error-color);
+}
+
+.success {
+    background-color: #e8f5e9;
+    color: var(--success-color);
+    border-left: 4px solid var(--success-color);
+}
+
+/* Stats */
+.stats {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+
+.stats p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+input[type="tel"] {
+    /* For mobile keyboards to show number pad */
+    inputmode: numeric;
+}
+
+/* For smaller screens */
+@media (max-width: 400px) {
+    input {
+        font-size: 16px; /* Prevent zooming on focus in mobile */
+    }
+    
+    input[type="tel"] {
+        letter-spacing: 1px; /* Better spacing for formatted numbers */
+    }
+}
+
+
+/*logo part*/
+/* Logo styles */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.logo {
+    height: 60px; /* Adjust based on your logo size */
+    width: auto;
+    max-width: 150px; /* Prevent logo from being too wide */
+}
+
+/* For mobile responsiveness */
+@media (max-width: 600px) {
+    .logo-container {
+        top: 10px;
+        right: 10px;
+    }
+    .logo {
+        height: 40px;
+        max-width: 100px;
+    }
+}
+
+
+/* Add to your style.css */
+.balance-box, .stat-box {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.balance-box h3, .stat-box h3 {
+    margin-top: 0;
+    color: #2e7d32;
+}
+
+.withdraw-btn {
+    background-color: #ff9800;
+    margin-top: 10px;
+}
+
+.withdraw-btn:hover {
+    background-color: #f57c00;
+}
+
+.withdraw-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+
+   /* Popup Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: slideDown 0.4s forwards;
+        }
+        
+        .modal-icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .modal-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .modal-btn {
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Balance Box Enhancements */
+        .balance-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .withdraw-btn {
+            background: linear-gradient(to right, #FF9800, #F57C00);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.3);
+        }
+        
+        .withdraw-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(245, 124, 0, 0.4);
+        }
+        
+        
+        
+        /* Toast notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: white;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+.toast.error { background: #ff4444; }
+.toast.warning { background: #ffbb33; color: #333; }
+.toast.success { background: #00C851; }
+
+@keyframes slideIn {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Input validation */
+input.valid { border-color: #00C851 !important; }
+input.invalid { border-color: #ff4444 !important; }
+
+/* Modal enhancements */
+.min-withdrawal-hint {
+    margin-top: 8px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
